@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionActivity">
+
+    <ImageView
+        android:id="@+id/transaction_profile_icon"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_wifi_24"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/transaction_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/transaction_profile_icon"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text="wifi"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/transaction_profile_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/transaction_profile_name"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:text="200 $"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/transaction_profile_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/transaction_profile_price"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:text="15/12/22"
+        android:textSize="30dp"
+        />
+
+
+
+
+</RelativeLayout>
