@@ -1,21 +1,28 @@
-package com.example.bankapp;
+package com.example.bankapp.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.content.Context;
+
+import com.example.bankapp.R;
+import com.example.bankapp.models.Transaction;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<Transaction> {
 
-    public ListAdapter (Context context , ArrayList<Transaction> transactionArrayList){
-        super(context,R.layout.list_item,transactionArrayList);
+    List<Transaction> items;
+
+    public ListAdapter (Context context , List<Transaction> transactionArrayList){
+        super(context, R.layout.list_item,transactionArrayList);
+        items = transactionArrayList;
     }
 
     @NonNull
@@ -29,21 +36,19 @@ public class ListAdapter extends ArrayAdapter<Transaction> {
         }
 
 
-        ImageView icon = convertView.findViewById(R.id.transaction_id);
+        //ImageView icon = convertView.findViewById(R.id.transaction_id);
         TextView name = convertView.findViewById(R.id.transaction_name);
         TextView price = convertView.findViewById(R.id.transaction_price);
         TextView date = convertView.findViewById(R.id.transaction_date);
 
-        icon.setImageResource(transaction.iconId);
-        name.setText(transaction.name);
-        price.setText(transaction.price);
-        date.setText(transaction.date);
-
-
-
-
+        //icon.setImageResource(transaction.iconId);
+        name.setText(transaction.getName());
+        price.setText(transaction.getPrice());
+        date.setText(transaction.getDate());
 
 
         return convertView;
     }
+
+
 }

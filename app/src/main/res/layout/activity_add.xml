@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TransactionActivity">
+    tools:context=".activities.AddActivity">
+
 
     <ImageView
         android:id="@+id/transaction_profile_icon"
@@ -50,9 +51,5 @@
         android:text="Add"
         android:textStyle="bold"
         />
-
-
-
-
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.bankapp;
+package com.example.bankapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,16 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bankapp.R;
 import com.google.android.material.button.MaterialButton;
-
-import butterknife.BindView;
-import butterknife.OnClick;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String remeberMeCheckbox = preferences.getString("remember","");
         if(remeberMeCheckbox.equals("true")){
-            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+            Intent intent = new Intent(MainActivity.this, ChoiceActivity.class);
             startActivity(intent);
         }else if(remeberMeCheckbox.equals("true")){
             Toast.makeText(this,"Please login",Toast.LENGTH_SHORT).show();
@@ -51,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                if(username.getText().toString().trim().equals("admin") && password.getText().toString().trim().equals("admin")){
+                    Intent intent = new Intent(getApplicationContext(),ChoiceActivity.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(MainActivity.this,"LOGIN FAILED !!! ",Toast.LENGTH_SHORT).show();
